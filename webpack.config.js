@@ -18,6 +18,7 @@ module.exports = {
 	output: {
 		path: path.resolve('dist'),
 		libraryTarget: 'umd',
+		globalObject: 'this',
 	},
 
 	module: {
@@ -37,12 +38,12 @@ module.exports = {
 					{
 						loader: 'svgo-loader',
 						options: {
-                            // https://github.com/svg/svgo#what-it-can-do
+							// https://github.com/svg/svgo#what-it-can-do
 							plugins: [
-                                { removeViewBox: false },
-                                { removeXMLNS: true },
-                                { removeDimensions: true },
-                                { sortAttrs: true },
+								{ removeViewBox: false },
+								{ removeXMLNS: true },
+								{ removeDimensions: true },
+								{ sortAttrs: true },
 								{
 									removeAttrs: {
 										attrs: 'svg:(class)',
