@@ -1,6 +1,5 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { getIconEntries } = require('./utils');
 const EntryFile = require('./entry-file');
 
@@ -55,6 +54,5 @@ module.exports = {
 	plugins: [
 		new VueLoaderPlugin(),
 		new EntryFile(),
-		new CleanWebpackPlugin(),
 	],
 };
