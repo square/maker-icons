@@ -1,5 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+const { camelCase, upperFirst } = require('lodash');
+const pascal = string => upperFirst(camelCase(string));
 
 const featherIconsDir = path.dirname(require.resolve('feather-icons/package.json'));
 const featherIconsAssetsDir = path.resolve(featherIconsDir, 'dist/icons/');
@@ -10,7 +12,7 @@ function getIconEntries(dir) {
 
 	const entries = {};
 	iconPaths.forEach(file => {
-		entries[path.join(dir, path.basename(file, '.svg'))] = path.join('feather-icons/dist/icons/', file);
+		entries[path.join(dir, pascal(path.basename(file, '.svg')))] = path.join('feather-icons/dist/icons/', file);
 	});
 	return entries;
 }
