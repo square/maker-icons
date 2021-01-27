@@ -1,24 +1,18 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { getIconEntries } = require('./utils');
+const EntryFile = require('./entry-file');
 
 module.exports = {
 	mode: 'production',
 
-	resolve: {
-		alias: {
-			'feather-icons': 'feather-icons/dist/icons/',
-		},
-	},
-
 	entry: {
-		'index': './src/index',
+		...getIconEntries('./'),
 	},
 
 	output: {
-		path: path.resolve('dist'),
-		libraryTarget: 'umd',
-		globalObject: 'this',
+		path: path.resolve(__dirname, '../'),
+		libraryTarget: 'commonjs2',
 	},
 
 	module: {
@@ -59,6 +53,6 @@ module.exports = {
 
 	plugins: [
 		new VueLoaderPlugin(),
-		new CleanWebpackPlugin(),
+		new EntryFile(),
 	],
 };
