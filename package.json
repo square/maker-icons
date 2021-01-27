@@ -4,11 +4,8 @@
   "description": "Maker Icons",
   "license": "Apache-2.0",
   "repository": "square/maker-icons",
-  "files": [
-    "dist"
-  ],
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "index.js",
+  "module": "index.esm.js",
   "scripts": {
     "build": "webpack --config build/webpack.config.js"
   },
