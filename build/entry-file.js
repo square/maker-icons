@@ -7,14 +7,11 @@ class EntryFile {
 	apply(compiler) {
 		compiler.hooks.emit.tapAsync('webpack-distsize-plugin', (compilation, cb) => {
 			const iconExports = Array.from(compilation.entrypoints.keys())
-				//.filter(p => p.startsWith('icons/'))
 				.map(p => {
 					const basename = path.basename(p);
-					const exportAs = pascal(basename); // + '-icon');
+					const exportAs = pascal(basename);
 					return `export { default as ${exportAs} } from './${p}'`;
 				});
-
-			// iconExports.push('export { default } from \'./lib/icon-layer\'');
 
 			const source = iconExports.join('\n');
 

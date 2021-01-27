@@ -8,13 +8,12 @@ module.exports = {
 	mode: 'production',
 
 	entry: {
-		...getIconEntries('./'), //'icons/'),
+		...getIconEntries('./'),
 	},
 
 	output: {
 		path: path.resolve(__dirname, '../dist'),
-		libraryTarget: 'commonjs2', //'umd',
-		// globalObject: 'this',
+		libraryTarget: 'commonjs2',
 	},
 
 	module: {
