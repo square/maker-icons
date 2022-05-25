@@ -24,6 +24,8 @@ npm publish --dry-run
 
 Before publishing remember to bump the version in `package.json`.
 
+Also remember to login using `npm login`.
+
 Then actually publish with:
 
 ```bash
