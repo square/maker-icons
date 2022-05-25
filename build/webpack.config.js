@@ -7,7 +7,8 @@ module.exports = {
 	mode: 'production',
 
 	entry: {
-		...getIconEntries('./'),
+		...getIconEntries('./node_modules/feather-icons/dist/icons'),
+		...getIconEntries('./svg'),
 	},
 
 	output: {
