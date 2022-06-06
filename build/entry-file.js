@@ -1,7 +1,6 @@
 const path = require('path');
 const babel = require('@babel/core');
-const { camelCase, upperFirst } = require('lodash');
-const pascal = string => upperFirst(camelCase(string));
+const  { pascal } = require('./utils');
 
 class EntryFile {
 	apply(compiler) {

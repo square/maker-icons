@@ -66,3 +66,4 @@ typings/
 # webpack build output
 dist
 /*.js
+traced

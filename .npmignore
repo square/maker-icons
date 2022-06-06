@@ -1,4 +1,9 @@
+# no need to explicitly add node_modules
+# it's ignored by default, see:
+# https://npm.github.io/publishing-pkgs-docs/publishing/the-npmignore-file.html
+
 /build
 readme.md
 .nvmrc
 /svg
+/traced
